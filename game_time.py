@@ -307,8 +307,7 @@ def play():
         sparkle(buttons,0.1,40)
         # Open solenoid 10 sec
         logging.info("We have a winner!")
-        #TODO open solenoid
-        #open_solenoid(2)
+        open_solenoid(10)
     else:
         # else 3 flash quick succession
         flash(buttons,0.1,3)

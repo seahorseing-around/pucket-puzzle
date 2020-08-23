@@ -10,7 +10,7 @@ import configparser
 
 
 #TODO work out useful info logging
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 #################
 # Configuration #
@@ -250,7 +250,7 @@ def roman_score(buttons,score):
     if score > high_score:
         logging.info("New High Score, writing high_score={} to config".format(score))
         buttons[10].led.on()
-        #TODO write new highscore to config
+        # write new highscore into config
         config['HighScore'] = {'high_score':score}
         with open(config_loc, 'w') as configfile:
             config.write(configfile)
@@ -353,13 +353,16 @@ if __name__ == '__main__':
     sparkle(buttons,0.05,40)
     sparkle(buttons,0.025,80)
     
-    #buttons[10].button.when_held=display_high_score
-
-    #buttons[0].button.when_held=backdoor
 
     # Start wait on magnetic sensor
+    
     # TODO change to when_active
     # tried when_active but when i do that - the button presses aren't registered...
+    
+    # Same goes for these functtions
+    #buttons[10].button.when_held=display_high_score
+    #buttons[0].button.when_held=backdoor
+
     i=0
     while True:
         if REED.is_active:

@@ -7,6 +7,7 @@ from signal import signal, SIGTERM, SIGINT
 from sys import exit
 import random
 import configparser
+import threading
 
 
 #TODO work out useful info logging
@@ -264,10 +265,10 @@ def roman_score(buttons,score):
 # Operations #
 ##############
 
-def open_solenoid(time):
+def open_solenoid():
     logging.debug("Opening Solenoid")
     SOLENOID.on()
-    time.sleep(time)
+    sleep(20)
     logging.info("Closing Solenoid")
     SOLENOID.off()
 
@@ -307,7 +308,8 @@ def play():
         sparkle(buttons,0.1,40)
         # Open solenoid 10 sec
         logging.info("We have a winner!")
-        open_solenoid(10)
+        x = threading.Thread(target = open_solenoid)
+        x.start()
     else:
         # else 3 flash quick succession
         flash(buttons,0.1,3)

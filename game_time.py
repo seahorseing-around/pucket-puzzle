@@ -337,6 +337,8 @@ def backdoor():
         
         logging.info("Backdoor opened, opening solenoid")
         flash(buttons,0.5,2)
+        x = threading.Thread(target = open_solenoid)
+        x.start()
         sleep(10)
     else:
         logging.info("Backdoor definitely not open")

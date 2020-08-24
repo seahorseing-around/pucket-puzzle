@@ -336,7 +336,8 @@ def backdoor():
                     return
         
         logging.info("Backdoor opened, opening solenoid")
-        sleep(2)
+        flash(buttons,0.5,2)
+        sleep(10)
     else:
         logging.info("Backdoor definitely not open")
         sleep(1)

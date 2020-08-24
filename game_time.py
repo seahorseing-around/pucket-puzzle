@@ -305,7 +305,7 @@ def play():
     # If high enough score 
     if score >= winning_score:
         # sparkle random lights end in big flash
-        sparkle(buttons,0.1,40)
+        sparkle(buttons,0.025,160)
         # Open solenoid 10 sec
         logging.info("We have a winner!")
         x = threading.Thread(target = open_solenoid)

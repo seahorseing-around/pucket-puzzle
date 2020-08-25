@@ -266,7 +266,7 @@ def roman_score(buttons,score):
 ##############
 
 def open_solenoid():
-    logging.debug("Opening Solenoid")
+    logging.info("Opening Solenoid")
     SOLENOID.on()
     sleep(20)
     logging.info("Closing Solenoid")

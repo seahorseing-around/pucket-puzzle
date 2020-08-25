@@ -11,7 +11,7 @@ import threading
 
 
 #TODO work out useful info logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', filename='/var/log/pucket-puzzle.log')
 
 #################
 # Configuration #
